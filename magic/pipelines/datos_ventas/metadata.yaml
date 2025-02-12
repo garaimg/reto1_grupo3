@@ -9,18 +9,72 @@ blocks:
     export_write_policy: append
     limit: 1000
     use_raw_sql: true
-  downstream_blocks: []
+  downstream_blocks:
+  - postgres_data_insertion
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: sql
   name: postgres_tables_creation
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: data_loader
   upstream_blocks: []
   uuid: postgres_tables_creation
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    data_provider: postgres
+    data_provider_profile: dev
+    export_write_policy: append
+  downstream_blocks:
+  - postgres_data_transformation
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: postgres_data_insertion
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - postgres_tables_creation
+  uuid: postgres_data_insertion
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - postgres_data_exportation
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: postgres_data_transformation
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - postgres_data_insertion
+  uuid: postgres_data_transformation
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: postgres_data_exportation
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - postgres_data_transformation
+  uuid: postgres_data_exportation
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
