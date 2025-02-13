@@ -17,12 +17,12 @@ blocks:
   language: sql
   name: postgres_tables_creation
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_loader
   upstream_blocks: []
   uuid: postgres_tables_creation
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     data_provider: postgres
@@ -42,7 +42,7 @@ blocks:
   upstream_blocks:
   - postgres_tables_creation
   uuid: postgres_data_insertion
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks:
@@ -53,13 +53,13 @@ blocks:
   language: python
   name: postgres_data_transformation
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: transformer
   upstream_blocks:
   - postgres_data_insertion
   uuid: postgres_data_transformation
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks: []
