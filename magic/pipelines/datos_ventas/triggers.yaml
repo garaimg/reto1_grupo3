@@ -1,0 +1,14 @@
+triggers:
+- description: null
+  envs: []
+  last_enabled_at: 2025-02-13 14:28:03.675824
+  name: "Ejecuci\xF3n continua"
+  pipeline_uuid: datos_ventas
+  schedule_interval: '* * * * *'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2025-02-13 14:27:00
+  status: active
+  token: d4058ff51e6d41d2b7a3e83188c93b8e
+  variables: {}
