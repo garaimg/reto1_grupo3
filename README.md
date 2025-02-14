@@ -25,7 +25,8 @@ minuto.
     - **pgAdmin:** Contenedor opcional que facilita la administración y visualización de las tablas en la base de datos.
 
    El archivo `docker-compose.yml` define estos servicios y utiliza un archivo `.env` para gestionar las variables de
-   entorno (nombre de base de datos, usuario, contraseña, host, puerto, etc.).
+   entorno de postgres y pgAdmin (nombre de base de datos, usuario, contraseña, host, puerto, email de pgAdmin,
+   contraseña de pgAdmin, etc.).
 
 2. **Definición de la Infraestructura en la Base de Datos:**
     - **Tabla `ventas`:** Tabla de origen donde se insertan los datos de ventas.
@@ -36,11 +37,11 @@ minuto.
 3. **Inserción de Datos:**
     - Se ejecuta una segunda etapa de la pipeline que inserta datos aleatorios en la tabla `ventas`. Con cada ejecución
       se añaden nuevos registros, simulando un flujo continuo de datos.
-   
+
 4. **Lectura y Transformación de Datos:**
 
 - Se ha desarrollado una etapa de la pipeline en Mage, donde se realizan las siguientes transformaciones mediante el uso
-de dataframes de Pandas:
+  de dataframes de Pandas:
 
 - **Lectura:**  
   Se extraen los datos de la tabla `ventas` utilizando una consulta SQL que selecciona únicamente los registros
