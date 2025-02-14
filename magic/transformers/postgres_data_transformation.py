@@ -57,9 +57,6 @@ def transform_sales_data(*args, **kwargs) -> DataFrame:
     df['fecha_venta'] = pd.to_datetime(df['fecha_venta'])
     df['mes_venta'] = df['fecha_venta'].dt.month
 
-    # Aunque ya filtramos por id, se elimina cualquier posible duplicado.
-    df = df.drop_duplicates(subset=['id'])
-
     print(df)  # Para verificar los cambios
 
     return df

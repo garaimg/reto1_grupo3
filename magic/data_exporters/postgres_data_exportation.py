@@ -24,5 +24,5 @@ def export_data_to_new_table(df: DataFrame, **kwargs) -> None:
             schema_name,
             table_name,
             index=False,  # No incluir el índice de pandas en la exportación
-            if_exists='append',  # Agregar las nuevas anomalías a la tabla existente
+            if_exists='append',  # Agregar a la tabla existente
         )

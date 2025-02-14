@@ -1,0 +1,1 @@
+{"id": "int64", "producto": "str", "cantidad": "int64", "precio_unitario": "float64", "fecha_venta": "datetime64[ns]", "total_venta": "float64", "categoria_venta": "str", "mes_venta": "int64"}
